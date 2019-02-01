@@ -4,7 +4,7 @@
     xmlns:nsDrawer="nativescript-ui-sidedrawer">
 
     <ActionBar class="action-bar">
-        <Label class="action-bar-title" text="Home"></Label>
+        <Label class="action-bar-title" text="About" />
     </ActionBar>
 
     <nsDrawer:RadSideDrawer id="sideDrawer">
@@ -15,35 +15,22 @@
                 </StackLayout>
                 <ScrollView>
                     <StackLayout>
+                        <Button text="Home" tap="gotoHome"
+                            padding="10"
+                            backgroundColor="lightgray"/> 
                         <Button text="Preferences" tap="gotoPrefs"
                             padding="10"
-                            backgroundColor="lightgray"/> 
-                        <Button text="About" tap="gotoAbout"
-                            padding="10"
-                            backgroundColor="lightgray"/> 
+                            backgroundColor="lightgray"/>   
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
         </nsDrawer:RadSideDrawer.drawerContent>
         <nsDrawer:RadSideDrawer.mainContent>
-            <GridLayout rows="auto,auto,auto,auto,auto,*" columns="auto,auto,auto,*">
-        <Label class="my-label" text="Welcome to the Home page!"
-            row="0" colSpan="4"/>
-        <Button text="Tap Me" tap="onTap"
-            row="1" col="0" />
-        <Label class="my-label" text="You've tapped "
-            row="1" col="1" />
-        <Label id="label" class="my-label"
-         text="{{counter}}"
-         row="1" col="2" />
-        <Label class="my-label" text=" times"
-         row="1" col="3" />
-        <Label class="my-heading" text="Pages"
-            row="2" col="1" colSpan="2"/>
-        <Button text="About" tap="gotoAbout"
-            row="3" colSpan="4"/>
-        <Button text="Prefrences" tap="gotoPrefs"
-            row="4" colSpan="4"/>
+            <GridLayout rows="auto,*" columns="auto,*">
+        <Label class="my-label" text="Welcome to the About page! by Aaron Baker
+        this  program is in fulfillment of CMSC 4233 (or 5233) Spring 2019 Assignment 2"
+            row="0" colSpan="2"/>
+        
             </GridLayout>
         </nsDrawer:RadSideDrawer.mainContent>
     </nsDrawer:RadSideDrawer>
