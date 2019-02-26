@@ -1,0 +1,35 @@
+<Page loaded="pageLoaded" class="page" xmlns="http://www.nativescript.org/tns.xsd" xmlns:lv="nativescript-ui-listview" xmlns:f="nativescript-fresco">
+
+	<ActionBar class="action-bar">
+		<Label text="Latest Stories" class="action-bar-label" />
+		<ActionItem tap="{{ toggleSearch }}" ios.systemIcon="12" ios.position="right" android.position="popup"></ActionItem>
+	</ActionBar>
+
+	<GridLayout class="{{ searching ? 'searching' : 'not-searching' }}" marginBottom="-120">
+		<GridLayout rows="auto, *">
+
+			<SearchBar row="0" hint="Filter News..." id="searchBar" text="{{ searchPhrase }}" submit="{{ onSearchSubmit }}" clear="{{ clear }}"
+				class="search-bar" />
+
+			<lv:RadListView row="1" id="list-view" items="{{ news }}" marginRight="-2" separatorColor="transparent" height="100%">
+				<lv:RadListView.itemTemplate>
+					<StackLayout>
+						<GridLayout rows="*" backgroundColor="White">
+							<GridLayout rows="*" columns="*">
+								<Image src="{{ urlToImage }}" stretch="aspectFill" height="200" />
+								<GridLayout verticalAlignment="top">
+									<StackLayout class="news-source-banner" backgroundColor="#bc3b4e77">
+										<Label text="{{ source.name }}" class="news-source" />
+									</StackLayout>
+								</GridLayout>
+							</GridLayout>
+						</GridLayout>
+						<StackLayout paddingTop="15" paddingBottom="20" paddingLeft="15" paddingRight="15" backgroundColor="White">
+							<Label text="{{ title }}" class="news-title" textWrap="true" />
+						</StackLayout>
+					</StackLayout>
+				</lv:RadListView.itemTemplate>
+			</lv:RadListView>
+		</GridLayout>
+	</GridLayout>
+</Page>
